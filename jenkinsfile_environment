@@ -9,7 +9,7 @@ pipeline{
     stages{
         stage('check env list'){
             steps{
-                echo "env"
+                sh '''env'''
             }
         }
         stage ('checkout'){
