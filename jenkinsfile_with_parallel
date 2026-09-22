@@ -1,32 +1,30 @@
 pipeline{
     agent any
 
-    stages{
+        stages{
         
-        stage ('Checkout'){
-            steps{
+            stage ('Checkout'){
+                steps{
                 echo "this is checkout stage"
                 sleep 5
-            }
-        }
+                     }
+                }
 
-        stage('parallel testing'){
-            parallel{
-                stage ('test1'){
-                    steps {
-                        echo "this is test1 from chrome"
-                        sleep 5
+            stage('parallel testing'){
+                parallel{
+                    stage ('test1'){
+                        steps {
+                            echo "this is test1 from chrome"
+                            sleep 5
+                            }
+                        }
+                    stage ('test2'){
+                        steps {
+                            echo "this is test2 from operamini"
+                            sleep 5
+                            }
+                        }
                     }
                 }
-                stage ('test2'){
-                    steps {
-                        echo "this is test2 from operamini"
-                        sleep 5
-                    }
-                }
             }
-
-
         }
-    }
-}
