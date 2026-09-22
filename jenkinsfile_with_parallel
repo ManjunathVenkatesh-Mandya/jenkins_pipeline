@@ -1,0 +1,28 @@
+pipeline{
+    agent any
+
+    stages{
+        stage ('Checkout'){
+            stpes{
+                echo "this is checkout stage"
+            }
+        }
+
+        stage('parallel testing'){
+            parallel{
+                stage ('test1'){
+                    steps {
+                        echo "this is test1 from chrome"
+                    }
+                }
+                stage ('test2'){
+                    steps {
+                        echo "this is test2 from operamini"
+                    }
+                }
+            }
+
+
+        }
+    }
+}
