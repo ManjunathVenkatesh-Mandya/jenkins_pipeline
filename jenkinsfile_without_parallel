@@ -1,0 +1,22 @@
+pipeline{
+    agent any
+
+    stages{
+        stage ('checkout'){
+            steps{
+                echo "this is checkout stage"
+            }
+        }
+        stage ('test1'){
+            steps{
+                echo "this is test1 chrome test stage"
+                sleep 5
+            }
+        }
+        stage('test2'){
+            steps{
+                echo "this is test2 firefox test2 stage"
+            }
+        }
+    }
+}
