@@ -1,0 +1,35 @@
+pipeline{
+    agent any
+
+    environment{
+        APP = 'frontend'
+        ENV = 'prod'
+    }
+    
+    stages{
+        stage ('checkout'){
+            steps{
+                echo "GROOVY---> APP_TYPE: $APP, TARGET_ENV: $ENV "
+            }
+            sh '''
+            echo "GROOVY---> APP_TYPE: $APP, TARGET_ENV: $ENV "
+            '''
+            script{
+                    echo "GROOVY---> APP_TYPE: ${env.APP}, TARGET_ENV: ${env.ENV} "
+            }
+        }
+        
+        stage ('Build'){
+            steps{
+                echo "GROOVY---> APP_TYPE: $APP, TARGET_ENV: $ENV "
+            }
+            sh '''
+            echo "GROOVY---> APP_TYPE: $APP, TARGET_ENV: $ENV "
+            '''
+            script{
+                    echo "GROOVY---> APP_TYPE: ${env.APP}, TARGET_ENV: ${env.ENV} "
+            }
+        }
+    }
+
+}
