@@ -2,9 +2,11 @@ pipeline{
     agent any
 
     stages{
+        
         stage ('Checkout'){
-            stpes{
+            steps{
                 echo "this is checkout stage"
+                sleep 5
             }
         }
 
@@ -13,11 +15,13 @@ pipeline{
                 stage ('test1'){
                     steps {
                         echo "this is test1 from chrome"
+                        sleep 5
                     }
                 }
                 stage ('test2'){
                     steps {
                         echo "this is test2 from operamini"
+                        sleep 5
                     }
                 }
             }
