@@ -1,0 +1,25 @@
+pipeline{
+    agent none
+
+    stages{
+        stage ('checkout stage'){
+            agent {
+                label 'slave1'
+            }
+            steps{
+                echo "this is checkout stage"
+
+            }
+        }
+
+        stage ('build stage') {
+            agent {
+                label 'slave2'
+            }
+            steps{
+                echo "this is build stage"
+
+            }
+        }
+    }
+}
