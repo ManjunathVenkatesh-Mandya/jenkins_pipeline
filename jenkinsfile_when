@@ -2,9 +2,9 @@ pipeline{
     agent any
 
     parameters{
-        choice(name: 'BRANCH',
-        choices: ['main','production'],
-        description: 'choose the branch')
+        choice(name: 'BRANCH', 
+        choices: ['main', 'production'],
+        description: 'enter the branch name')
     }
 
     stages{
@@ -16,30 +16,34 @@ pipeline{
             }
         }
 
-        stage('BUILD_IN_MAIN'){
+        stage('BRANCH_MAIN'){
             when {
                 expression {
                     return params.BRANCH == 'main'
                 }
             }
+
             steps{
                 sh '''
-                echo "SHELL ---> Branch: $BRANCH"
+                echo "branch is: $BRANCH"
                 '''
-                }
             }
+        }
 
-        stage('BUILD_IN_PRODUCTION'){
+        stage('BRANCH_PRODUCTION'){
             when {
                 expression{
                     return params.BRANCH == 'production'
                 }
             }
+
             steps{
                 sh '''
-                echo "SHELL ---> Branch: $BRANCH"
+                echo "branch is : $BRANCH"
                 '''
             }
         }
+
+
     }
 }
