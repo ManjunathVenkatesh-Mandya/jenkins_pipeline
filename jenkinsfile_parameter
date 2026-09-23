@@ -2,41 +2,27 @@ pipeline{
     agent any
 
     parameters{
-        
-        
-        string(name: 'BRANCH_NAME', 
-                defaultValue: 'main', 
-                description: 'enter a branch')
 
-        choice(name: 'ENV', 
-            choices: ['test','pre-prod','prod'], 
-            description: 'choose a environmnet')
+        string(name:MY_NAME,
+        defaultValue:xyz,
+        description:'enter your good name')
+
+        string(name:MY_AGE,
+        defaultValue:18,
+        description:'enter your age')
+
+        choice(name:'CITY',
+        choices:['Mandya','Mysuru','Bengaluru'],
+        description:'choose your city')
 
     }
 
     stages{
-        stage('Checkout'){
+        stage('build'){
             steps{
-                script{
-                echo "GOORVY--->branch: ${params.BRANCH_NAME}"
-                }
-                
                 sh '''
-                echo "SHELL--->branch: ${BRANCH_NAME}"
+                echo "my name is $MY_NAME, my age is ${MY_AGE}years and my city is $CITY"
                 '''
-            }
-        }
-
-        stage('deploy'){
-            steps{
-                script{
-                echo "GOORVY--->env: ${params.ENV}"
-                }
-                
-                sh '''
-                echo "SHELL--->env: ${ENV}"
-                '''
-
             }
         }
     }
