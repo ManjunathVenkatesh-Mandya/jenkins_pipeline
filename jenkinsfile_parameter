@@ -3,11 +3,11 @@ pipeline{
 
     parameters{
 
-        string(name:MY_NAME,
+        string(name:'MY_NAME',
         defaultValue:'',
         description:'enter your good name')
 
-        string(name:MY_AGE,
+        string(name:'MY_AGE',
         defaultValue:'',
         description:'enter your age')
 
