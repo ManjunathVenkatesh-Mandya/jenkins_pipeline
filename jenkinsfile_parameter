@@ -1,0 +1,37 @@
+pipeline{
+    agent any
+
+    parameters{
+        booleanParam(name: 'BUILD', defaultValue: TRUE, description: 'weather to build or not')
+        string(name: 'BRANCH_NAME', defaultValue: 'main', description: 'enter a branch')
+        choice(name: 'ENV', choices: ['test','pre-prod','prod'], description: 'choose a environmnet')
+
+    }
+
+    stages{
+        stage('Checkout'){
+            steps{
+                script{
+                echo "GOORVY--->branch: ${params.BRANCH_NAME}"
+                }
+                
+                sh '''
+                echo "SHELL--->branch: $BRANCH_NAME"
+                '''
+            }
+        }
+
+        stage('prod'){
+            steps{
+                script{
+                echo "GOORVY--->env: ${params.ENV}"
+                }
+                
+                sh '''
+                echo "SHELL--->env: $ENV"
+                '''
+
+            }
+        }
+    }
+}
