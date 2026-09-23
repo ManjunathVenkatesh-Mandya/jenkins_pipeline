@@ -2,7 +2,7 @@ pipeline{
     agent any
 
     parameters{
-        booleanParam(name: 'BUILD', defaultValue: TRUE, description: 'weather to build or not')
+        booleanParam(name: 'BUILD', defaultValue: true, description: 'weather to build or not')
         string(name: 'BRANCH_NAME', defaultValue: 'main', description: 'enter a branch')
         choice(name: 'ENV', choices: ['test','pre-prod','prod'], description: 'choose a environmnet')
 
