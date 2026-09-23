@@ -16,7 +16,7 @@ pipeline{
                 }
                 
                 sh '''
-                echo "SHELL--->branch: $BRANCH_NAME"
+                echo "SHELL--->branch: ${BRANCH_NAME}"
                 '''
             }
         }
@@ -28,7 +28,7 @@ pipeline{
                 }
                 
                 sh '''
-                echo "SHELL--->env: $ENV"
+                echo "SHELL--->env: ${ENV}"
                 '''
 
             }
