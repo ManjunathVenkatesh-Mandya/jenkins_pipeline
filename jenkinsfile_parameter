@@ -2,9 +2,15 @@ pipeline{
     agent any
 
     parameters{
-        booleanParam(name: 'BUILD', defaultValue: false, description: 'weather to build or not')
-        string(name: 'BRANCH_NAME', defaultValue: 'main', description: 'enter a branch')
-        choice(name: 'ENV', choices: ['test','pre-prod','prod'], description: 'choose a environmnet')
+        
+        
+        string(name: 'BRANCH_NAME', 
+                defaultValue: 'main', 
+                description: 'enter a branch')
+
+        choice(name: 'ENV', 
+            choices: ['test','pre-prod','prod'], 
+            description: 'choose a environmnet')
 
     }
 
@@ -21,7 +27,7 @@ pipeline{
             }
         }
 
-        stage('prod'){
+        stage('deploy'){
             steps{
                 script{
                 echo "GOORVY--->env: ${params.ENV}"
