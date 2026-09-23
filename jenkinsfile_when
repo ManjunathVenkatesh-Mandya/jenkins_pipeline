@@ -3,7 +3,7 @@ pipeline{
 
     parameters{
         choice(name: 'BRANCH',
-        choices: ['main','production']
+        choices: ['main','production'],
         description: 'choose the branch')
     }
 
@@ -29,7 +29,7 @@ pipeline{
                 '''
                 }
             }
-            
+
         stage('BUILD_IN_PRODUCTION'){
             when {
                 expression{
