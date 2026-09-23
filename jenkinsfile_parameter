@@ -21,7 +21,7 @@ pipeline{
         stage('build'){
             steps{
                 sh '''
-                echo "my name is $MY_NAME, my age is ${MY_AGE}years and my city is $CITY"
+                echo "my name is ${MY_NAME}, my age is ${MY_AGE}years and my city is ${CITY}"
                 '''
             }
         }
