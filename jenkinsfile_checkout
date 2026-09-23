@@ -1,0 +1,42 @@
+pipeline{
+    agent any
+
+    stages{
+        stage('checkout1'){
+            steps{
+                git branch: 'main', 
+                    credentialsId: 'my_github_account', 
+                    url: 'https://github.com/ManjunathVenkatesh-Mandya/bash_script_practice.git'
+            }
+        }
+
+        stage('check_chekout1'){
+            steps{
+                sh '''
+                pwd
+                git branch
+                ls -lrt
+                '''
+            }
+        }
+
+        stage('checkout2'){
+            steps{
+                checkout scmGit(branches: [[name: '*/main']], 
+                extensions: [], 
+                userRemoteConfigs: [[credentialsId: 'my_github_account', 
+                url: 'https://github.com/ManjunathVenkatesh-Mandya/my_devops_notes.git']])
+            }
+        }
+
+        stage('check_checkout2'){
+            steps{
+                sh '''
+                pwd
+                git branch
+                ls -lrt
+                '''
+            }
+        }
+    }
+}
