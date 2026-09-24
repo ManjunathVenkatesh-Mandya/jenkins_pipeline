@@ -1,0 +1,23 @@
+pipeline{
+    agent any
+
+    stages{
+        stage('BUILD'){
+            steps{
+                script{
+                    try{
+                        exit 1
+                    }
+                    catch (err){
+                        echo "found error: ${err}"
+                    }
+                }
+            }
+        }
+        stage('test'){
+            steps{
+                echo "hello Manjunath"
+            }
+        }
+    }
+}
