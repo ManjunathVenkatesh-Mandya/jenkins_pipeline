@@ -5,12 +5,9 @@ pipeline{
     stages{
         stage('BULD'){
             steps{
-                catchError
-                    (stageResult: 'SUCCESS', buildResult: 'SUCCESS')
+                catchError(stageResult: 'FAILURE', buildResult: 'SUCCESS')
                 {
-                 sh '''   
-                exit 1
-                '''
+                 sh 'exit 1'
                 }
             }
 
