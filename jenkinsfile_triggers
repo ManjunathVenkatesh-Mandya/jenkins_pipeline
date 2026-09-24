@@ -2,7 +2,7 @@ pipeline{
     agent any
 
     triggers{
-          pollSCM('* * * * *')
+        //   pollSCM('* * * * *')
         //   cron('H/5 * * * *')
         //   upstream(upstreamProjects: 'my_freestyle', 
         //   threshold: hudson.model.Result.SUCCESS)
