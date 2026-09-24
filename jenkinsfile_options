@@ -1,0 +1,15 @@
+pipeline{
+    agent any
+
+    options{
+        buildDiscarder(logRotator(numToKeepStr:'2'))
+    }
+
+    stages{
+        stage('BUILD'){
+            steps{
+                echo "hello Manjunath"
+            }
+        }
+    }
+}
