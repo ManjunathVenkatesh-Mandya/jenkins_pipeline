@@ -1,0 +1,19 @@
+pipeline{
+
+    agent any
+
+    stages{
+        stage('BULD'){
+            steps{
+                exit 1
+            }
+
+        }
+        
+        stage('TEST'){
+            steps{
+                echo "this is test stage"
+            }
+        }
+    }
+}
