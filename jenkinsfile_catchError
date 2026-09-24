@@ -5,6 +5,7 @@ pipeline{
     stages{
         stage('BULD'){
             steps{
+                catchError(stageResult: 'FAILURE', buildResult: 'SUCCESS')
                 exit 1
             }
 
