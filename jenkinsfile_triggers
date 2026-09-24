@@ -3,18 +3,27 @@ pipeline{
 
     triggers{
           pollSCM('* * * * *')
-          cron('H/5 * * * *')
-          upstream(upstreamProjects: 'my_freestyle', 
-          threshold: hudson.model.Result.SUCCESS)
+        //   cron('H/5 * * * *')
+        //   upstream(upstreamProjects: 'my_freestyle', 
+        //   threshold: hudson.model.Result.SUCCESS)
+
     }
-
-
-    
         stages{
+
+            stage('checkout'){
+                steps{
+                    git branch: 'main', credentialsId: 
+                        'my_github_account', 
+                        url: 'https://github.com/ManjunathVenkatesh-Mandya/installation_scripts.git'
+                }
+            }
+            
             stage('build'){
                 steps{
                    
-                    echo "hello Manjunath"
+                    sh '''
+                    ls -lrt
+                    '''
                     
                 }
             }
