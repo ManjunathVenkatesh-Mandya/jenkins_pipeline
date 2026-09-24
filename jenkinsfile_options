@@ -3,11 +3,13 @@ pipeline{
 
     options{
         buildDiscarder(logRotator(numToKeepStr:'2'))
+        timeout(time: 10, unit: 'SECONDS')
     }
 
     stages{
         stage('BUILD'){
             steps{
+                sleep 20
                 echo "hello Manjunath"
             }
         }
