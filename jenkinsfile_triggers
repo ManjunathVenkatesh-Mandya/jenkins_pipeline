@@ -5,7 +5,7 @@ pipeline{
           pollSCM('* * * * *')
           cron('H/5 * * * *')
           upstream(upstreamProjects: 'my_freestyle',
-          threshold: hudson.model.result.SUCCESS)
+          threshold: SUCCESS)
     }
 
 
