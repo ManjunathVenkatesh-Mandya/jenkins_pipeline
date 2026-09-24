@@ -1,13 +1,13 @@
 pipeline{
     agent any
 
-    // triggers{
-    //       pollSCM('* * * * *')
-    //       cron('H/5 * * * *')
-    //       upstream(upstreamProjects: 'my_freestyle', 
-    //       threshold: hudson.model.Result.SUCCESS)
+    triggers{
+          pollSCM('* * * * *')
+          cron('H/5 * * * *')
+          upstream(upstreamProjects: 'my_freestyle', 
+          threshold: hudson.model.Result.SUCCESS)
 
-    // }
+    }
         stages{
 
             stage('checkout'){
