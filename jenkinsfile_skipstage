@@ -9,7 +9,7 @@ pipeline{
                 script{
                     try{
                         
-                        sh 'exit 1'
+                        sh 'ls -lrt'
                     }
                     catch (err) {
                         echo "caught error: ${err}"
