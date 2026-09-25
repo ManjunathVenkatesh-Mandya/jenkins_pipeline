@@ -22,7 +22,7 @@ pipleine{
 
     post{
         always{
-            cleanWP()
+            cleanWs()
         }
     }
 }
