@@ -5,12 +5,12 @@ pipeline{
 
     stages{
         stage('stage1'){
-            steps{
-                when {
+            when {
                     expression {
                         skipSteps
                     }
                 }
+            steps{
                 script{
                     echo "this is stage1"
                 }
