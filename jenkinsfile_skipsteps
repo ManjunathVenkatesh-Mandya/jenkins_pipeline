@@ -1,0 +1,29 @@
+boolean runSteps=true
+
+pipleine{
+    agent any
+
+    stages{
+        stage('stage1'){
+            steps{
+                script{
+                    if(runSteps)
+                    echo "INDIA"
+                }
+            }
+        }
+
+        stage('stage2'){
+            steps{
+                echo "hello Manjunath"
+            }
+        }
+    }
+
+    post{
+        always{
+            cleanWP()
+        }
+    }
+}
+
