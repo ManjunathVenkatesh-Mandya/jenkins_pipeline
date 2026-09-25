@@ -7,8 +7,9 @@ pipleine{
         stage('stage1'){
             steps{
                 script{
-                    if(runSteps)
+                    if(runSteps){
                     echo "INDIA"
+                    }
                 }
             }
         }
