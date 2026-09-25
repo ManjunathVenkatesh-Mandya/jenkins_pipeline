@@ -11,8 +11,8 @@ pipeline{
                     echo "INDIAN"
                     }
 
-                    echo "skipped steps"
                 }
+                echo "skipped steps"
             }
         }
 
