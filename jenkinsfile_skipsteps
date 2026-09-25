@@ -1,13 +1,13 @@
 boolean runSteps = true
 
-pipleine{
+pipeline{
     agent any
 
     stages{
         stage('stage1'){
             steps{
                 script{
-                    if(runSteps){
+                    if (runSteps) {
                     echo "INDIA"
                     }
                 }
@@ -21,9 +21,9 @@ pipleine{
         }
     }
 
-post{
-    always{
-        cleanWs()
+    post{
+        always{
+            cleanWs()
         }
     }
 }
