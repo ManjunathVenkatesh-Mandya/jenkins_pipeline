@@ -6,15 +6,17 @@ pipeline{
     stages{
         stage('stage1'){
             steps{
-                try {
+                script{
+                    try {
                     sh 'ls -lrt'
 
-                }
-                catch (err) {
-                    echo "caught error: ${err}"
-                    stageResult = false
+                    }
+                    catch (err) {
+                        echo "caught error: ${err}"
+                        stageResult = false
 
-                }
+                    }
+                }    
             }
         }
 
