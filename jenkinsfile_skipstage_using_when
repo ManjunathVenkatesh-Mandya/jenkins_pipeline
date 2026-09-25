@@ -1,0 +1,26 @@
+boolean skipStage = false
+
+pipeline{
+    agent any
+
+    stages{
+        stage('stage1'){
+
+            when {
+                expression{
+                    skipStage
+                }
+            }
+            steps{
+                sh 'ls -lrt'
+            }
+        }
+
+        stage('stage2'){
+            steps{
+                sh 'ls -lrt'
+            }
+        }
+    }
+
+}
