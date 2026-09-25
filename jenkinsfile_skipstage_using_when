@@ -1,4 +1,4 @@
-boolean skipStage = false
+boolean skipStage = true
 
 pipeline{
     agent any
