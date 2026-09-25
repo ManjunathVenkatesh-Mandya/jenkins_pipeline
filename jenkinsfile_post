@@ -5,13 +5,14 @@ pipeline{
         stage('stage1'){
             steps{
                 echo "hello Manjunath"
-                sh 'exit 1'
+                
             }
         }
 
         stage('stage2'){
             steps{
                 echo "how are you?"
+                
             }    
         }
 
@@ -26,7 +27,7 @@ pipeline{
             }
 
             always{
-                echo "pipeline execution compleated"
+                cleanWs()
             }
     }
 }
