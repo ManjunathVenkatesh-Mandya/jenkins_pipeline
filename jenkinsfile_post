@@ -1,0 +1,31 @@
+pipeline{
+    agent any
+
+    stages{
+        stage('stage1'){
+            steps{
+                echo "hello Manjunath"
+            }
+        }
+
+        stage('stage2'){
+            steps{
+                echo "how are you?"
+            }    
+        }
+        
+        post{
+            success{
+                echo "the stages are success"
+            }
+
+            failure{
+                echo "the stages are failure"
+            }
+
+            always{
+                echo "pipeline execution compleated"
+            }
+        }
+    }
+}
