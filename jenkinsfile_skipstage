@@ -9,8 +9,10 @@ pipeline{
                 script{
                     try{
                         echo "my name is Manjunath"
+                        sh 'exit 1'
                     }
                     catch (err) {
+                        echo "caught error: ${err}"
                          skipStage = false
                     }
                 }
