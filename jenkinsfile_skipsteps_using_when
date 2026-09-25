@@ -7,11 +7,14 @@ pipeline{
         stage('stage1'){
            steps{
                 script{
+                    
                     if (skipSteps) {
                     echo "this is stage1"
                     }
+
+                    sh 'ls -lrt'
+
                 }
-            sh 'ls -lrt'
 
                 
             }
