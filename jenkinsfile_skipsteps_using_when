@@ -1,4 +1,4 @@
-boolean skipSteps = true
+boolean skipSteps = false
 
 pipeline{
     agent any
