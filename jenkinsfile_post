@@ -5,6 +5,7 @@ pipeline{
         stage('stage1'){
             steps{
                 echo "hello Manjunath"
+                sh 'exit 1'
             }
         }
 
