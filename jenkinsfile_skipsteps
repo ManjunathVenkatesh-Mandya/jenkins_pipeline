@@ -10,6 +10,8 @@ pipeline{
                     if (runSteps) {
                     echo "INDIAN"
                     }
+
+                    echo "skipped steps"
                 }
             }
         }
