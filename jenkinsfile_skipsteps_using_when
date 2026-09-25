@@ -1,0 +1,29 @@
+boolean skipSteps = true
+
+pipeline{
+    agent any
+
+    stages{
+        stage('stage1'){
+            steps{
+                when {
+                    expression {
+                        skipSteps
+                    }
+                }
+                script{
+                    echo "this is stage1"
+                }
+            sh 'ls -lrt'
+            }
+        }
+
+        stage('stage2'){
+            steps{
+                script{
+                    echo "this is stage2"
+                }
+            }
+        }
+    }
+}
