@@ -1,0 +1,46 @@
+boolean stageResult = true
+pipeline{
+
+    agent any
+
+    stages{
+        stage('stage1'){
+            steps{
+                try {
+                    sh 'ls -lrt'
+
+                }
+                catch (err) {
+                    echo "caught error: ${err}"
+                    stageResult = false
+
+                }
+            }
+        }
+
+        stage('stage2'){
+
+            when {
+                expression {
+                    return stageResult == true
+                }
+            }
+            steps{
+                echo "this is stage2"
+
+            }
+        }
+
+        stage('stage3'){
+
+             when {
+                expression {
+                    return stageResult == false
+                }
+            }
+            steps{
+                echo "this is stage3"
+            }
+        }
+    }
+}
