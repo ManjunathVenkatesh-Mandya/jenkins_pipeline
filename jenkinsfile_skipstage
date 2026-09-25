@@ -1,0 +1,26 @@
+boolean skipStage = true
+
+pipeline{
+    agent any
+
+    stages{
+        stage('stage1'){
+            steps{
+                script{
+                    try{
+                        echo "my name is Manjunath"
+                    }
+                    catch (err) {
+                         skipStage = false
+                    }
+                }
+            }
+        }
+
+        stage('stage2'){
+            steps{
+                echo "i am INDIAN"
+            }
+        }
+    }
+}
