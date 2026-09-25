@@ -14,8 +14,10 @@ pipeline{
                 script{
                     echo "this is stage1"
                 }
-            sh 'ls -lrt'
+
+                sh 'ls -lrt'
             }
+
         }
 
         stage('stage2'){
